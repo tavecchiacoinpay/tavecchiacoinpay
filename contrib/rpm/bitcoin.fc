@@ -1,0 +1,8 @@
+/usr/bin/tavecchiacoinpay-cli		--	gen_context(system_u:object_r:tavecchiacoinpay_exec_t,s0)
+/usr/sbin/tavecchiacoinpayd		--	gen_context(system_u:object_r:tavecchiacoinpay_exec_t,s0)
+/usr/lib(64)?/tavecchiacoinpay/tavecchiacoinpayd		--	gen_context(system_u:object_r:tavecchiacoinpay_exec_t,s0)
+
+/etc/tavecchiacoinpay(/.*)?		gen_context(system_u:object_r:tavecchiacoinpay_conf_t,s0)
+/var/lib/tavecchiacoinpay(/.*)?		gen_context(system_u:object_r:tavecchiacoinpay_var_lib_t,s0)
+
+(/var)?/run/tavecchiacoinpayd(/.*)?   gen_context(system_u:object_r:tavecchiacoinpay_var_run_t,s0)

@@ -1,0 +1,33 @@
+# /etc/conf.d/tavecchiacoinpayd: config file for /etc/init.d/tavecchiacoinpayd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/tavecchiacoinpay/tavecchiacoinpay.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/tavecchiacoinpayd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/tavecchiacoinpayd.pid"
+
+# Where to write tavecchiacoinpayd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/tavecchiacoinpayd"
+
+# User and group to own tavecchiacoinpayd process
+#BITCOIND_USER="tavecchiacoinpay"
+#BITCOIND_GROUP="tavecchiacoinpay"
+
+# Path to tavecchiacoinpayd executable
+#BITCOIND_BIN="/usr/bin/tavecchiacoinpayd"
+
+# Nice value to run tavecchiacoinpayd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#BITCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for tavecchiacoinpayd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BITCOIND_SIGTERM_TIMEOUT=60

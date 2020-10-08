@@ -1,0 +1,6 @@
+usr/local/bin/tavecchiacoinpay-qt usr/bin
+share/pixmaps/tavecchiacoinpay32.xpm usr/share/pixmaps
+share/pixmaps/tavecchiacoinpay16.xpm usr/share/pixmaps
+share/pixmaps/tavecchiacoinpay128.png usr/share/pixmaps
+debian/tavecchiacoinpay-qt.desktop usr/share/applications
+debian/tavecchiacoinpay-qt.protocol usr/share/kde4/services/
