@@ -21,5 +21,5 @@ RUN ./configure
 RUN make
 RUN make install
 #open service port
-EXPOSE 9666 19666
+EXPOSE 8332 19666
 CMD ["tavecchiacoinpayd", "--printtoconsole"]
