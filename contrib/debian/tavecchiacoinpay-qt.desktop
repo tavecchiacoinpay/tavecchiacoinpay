@@ -2,9 +2,6 @@
 Version=1.0
 Name=TavecchiacoinPay Core
 Comment=Connect to the TavecchiacoinPay P2P Network
-Comment[de]=Verbinde mit dem TavecchiacoinPay peer-to-peer Netzwerk
-Comment[fr]=TavecchiacoinPay, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=TavecchiacoinPay, eşten eşe kriptografik sanal para birimi
 Exec=tavecchiacoinpay-qt %u
 Terminal=false
 Type=Application
@@ -12,3 +9,4 @@ Icon=tavecchiacoinpay128
 MimeType=x-scheme-handler/tavecchiacoinpay;
 Categories=Office;Finance;
 StartupWMClass=TavecchiacoinPay-qt
+Name[en_US]=tavecchiacoinpay-qt.desktop
