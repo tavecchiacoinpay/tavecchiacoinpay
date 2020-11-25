@@ -9,3 +9,4 @@ mips*
 arm*
 aarch64*
 !Makefile
+!patches
