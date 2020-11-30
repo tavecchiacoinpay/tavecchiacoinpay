@@ -116,3 +116,5 @@ test/cache/*
 
 libtavecchiacoinpayconsensus.pc
 contrib/devtools/split-debug.sh
+
+.vscode
