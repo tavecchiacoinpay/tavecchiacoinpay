@@ -75,48 +75,48 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 210000;
+        consensus.nSubsidyHalvingInterval = 840000;
         consensus.BIP16Height = 0; // 0x000000003e3beff99bc85588a63dd381fecc83280147bc40c5991eeb83577d98
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x000000003e3beff99bc85588a63dd381fecc83280147bc40c5991eeb83577d98");
         consensus.BIP65Height = 0; // 0x000000003e3beff99bc85588a63dd381fecc83280147bc40c5991eeb83577d98
         consensus.BIP66Height = 0; // 0x000000003e3beff99bc85588a63dd381fecc83280147bc40c5991eeb83577d98
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 10 * 60;
+        consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
+        consensus.nPowTargetSpacing = 2.5 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 6048; // 75% of 8064
+        consensus.nMinerConfirmationWindow = 8064; // nPowTargetTimespan / nPowTargetSpacing * 4
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1603550236; // 10/24/2020 @ 2:37pm (UTC)
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = Consensus::BIP9Deployment::ALWAYS_ACTIVE;
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1462060800; // May 1st, 2016
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1603550236; // 10/24/2020 @ 2:37pm (UTC)
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = Consensus::BIP9Deployment::ALWAYS_ACTIVE;
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1479168000; // November 15th, 2016.
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1603550236; //  10/24/2020 @ 2:37pm (UTC)
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = Consensus::BIP9Deployment::ALWAYS_ACTIVE;
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
+        consensus.nMinimumChainWork = uint256S("0x00");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00"); //
+        consensus.defaultAssumeValid = uint256S("0x000000003e3beff99bc85588a63dd381fecc83280147bc40c5991eeb83577d98"); //
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xaf;
-        pchMessageStart[1] = 0x1e;
-        pchMessageStart[2] = 0xb5;
-        pchMessageStart[3] = 0x0a;
+        pchMessageStart[0] = 0xef;
+        pchMessageStart[1] = 0x11;
+        pchMessageStart[2] = 0xb0;
+        pchMessageStart[3] = 0x04;
         nDefaultPort = 9111;
         nPruneAfterHeight = 100000;
 
@@ -149,7 +149,7 @@ public:
 
         checkpointData = {
             {
-                // { 0, uint256S("0x000000003e3beff99bc85588a63dd381fecc83280147bc40c5991eeb83577d98")},
+                { 0, uint256S("0x000000003e3beff99bc85588a63dd381fecc83280147bc40c5991eeb83577d98")},
             }
         };
 
